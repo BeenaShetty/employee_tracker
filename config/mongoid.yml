@@ -1,0 +1,6 @@
+development:
+  sessions:
+    default:
+      database: employee_tracker
+      hosts:
+        - localhost:27017
