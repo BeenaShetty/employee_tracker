@@ -1,0 +1,14 @@
+<table>
+  <thead>
+    <td> First Name </td>
+    <td> Last Name </td>
+    <td> Image </td>
+  </thead>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.first_name %></td>
+      <td><%= user.last_name %></td>
+      <td><%=image_tag user.image %></td>
+    </tr>
+  <%end%>
+</table>

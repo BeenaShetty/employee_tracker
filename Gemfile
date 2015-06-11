@@ -37,8 +37,9 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  gem 'pry'
 end
 
-gem 'mongoid'
-gem 'bson_ext'
-
+gem 'mongoid', '~> 4.0.0'
+gem 'omniauth-google-oauth2'
+gem 'carrierwave-mongoid'
