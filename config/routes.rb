@@ -2,8 +2,18 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   match '/auth/:provider/callback' => 'sessions#create', via: :get
-  match 'logout' => 'sessions#destroy', via: :get
+  match 'logout' => 'sessions#destroy', via: :delete
+  match 'user' => 'users#show', via: :get
   root 'users#index'
+
+  constraints subdomain: 'api' do
+    scope module: 'api', defaults: {format: 'json'} do
+      namespace :v1 do
+        match '/login' => 'sessions#create', via: :get
+        match '/logout' => 'sessions#destroy', via: :get
+      end
+    end
+  end
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'

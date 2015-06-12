@@ -3,12 +3,14 @@
     <td> First Name </td>
     <td> Last Name </td>
     <td> Image </td>
+    <td> Access Token </td>
   </thead>
   <% @users.each do |user| %>
     <tr>
       <td><%= user.first_name %></td>
       <td><%= user.last_name %></td>
-      <td><%=image_tag user.image %></td>
+      <td><%=image_tag user.image.url %></td>
+      <td><%= user.access_token %></td>
     </tr>
   <%end%>
 </table>
